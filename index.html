@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Algo, did you missed me?</title>
+	<script type="text/javascript">
+		var am_i_gone = Date.now() >= new Date("2020-01-05");
+		var am_i_back = Date.now() >= new Date("2020-02-23");
+	</script>
+	<style type="text/css">
+		html *
+		{
+		   font-family: Helvetica !important;
+		}
+		img.party { 
+			width: 50%;  
+		}
+		@media (max-width: 700px) {
+		  img.main-image {
+		    width: 100%; 
+		  }
+		  img.party {
+		  	width: 75%;
+		  }
+		}
+	</style>
+	<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+	<meta name="author" content="Shaked Zychlinski">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body><center>
+	<div id="main-section" align="center"></p>
+	<script type="text/javascript">
+		if (am_i_back) {
+			document.getElementById("main-section").innerHTML = "<h1><i>I'm back!</i></h1><h3>Come say hi!</h3><img class=\"party\" src=\"party.png\">";
+		} else if (am_i_gone) {
+			var img = Math.floor(Math.random() * 4); 
+			document.getElementById("main-section").innerHTML = "<h1><i>Miss me?</i></h1><h2><font color=\"navy\">Here's a random AI-assisted photo of Ellie and me at the office</font></h2><h3>Almost as if I never left...</h3><img class=\"main-image\" src=\"" + img + ".png\">";
+		} else {
+			document.getElementById("main-section").innerHTML = "<h1><i>Miss me already?</i></h1><h3>I was just here... Come back on 05/01/20 or later!</h3>";
+		}
+	</script>
+</center></body>
+</html>
